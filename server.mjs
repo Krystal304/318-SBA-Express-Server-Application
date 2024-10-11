@@ -1,6 +1,7 @@
 
 //imports
 import express from 'express';
+import userRoutes from './routes/userRoutes.mjs';
 
 
 //instance of express and invoke
@@ -23,7 +24,7 @@ let PORT = 3000
 //middleware
 
 app.use(bodyParser.urlencode({ entended: true}));
-app.use(bodyParser.json({ extenden: true}));
+app.use(bodyParser.json({ extended: true}));
 
 app.use((req, res, next)=>{
     const time = new Date();
