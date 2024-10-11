@@ -5,36 +5,28 @@ import express from 'express';
 let router = express.Router();
 
 
-router.get('/users/:id/', (req, res)=>{
-    const id = req.params.id;
-    res.json ({
-        id: id,
-        name: 'donald duck'
-
-    });
-});
+router.get('/', (req, res)=>{
+    res.send('list')
+})
 
 router.post('/', (req, res)=>{
-    res.json({
-        id:1, 
-        name: 'Krissy Ball', 
-        sport: 'swim', 
-        age: 15});
+    res.send('create')
+})
+
+router.get('/:id/', (req, res)=>{
+res.send(`get user with id ${req.params.id}`)
+ });
+    
+ 
+router.put('/:id/', (req, res)=>{
+res.send(`update user with id ${req.params.id}`)
+ });
+
+
+router.delete('/:id/', (req, res)=>{
+res.send(`get user with id ${req.params.id}`)
 });
 
-router.put('/', (req, res)=>{
-    res.json({
-        id:1, 
-        name: 'Krissy Ball', 
-        sport: 'tennis', 
-        age: 16});
-})  
 
-router.delete('/user/:id', (req, res)=>{
-    const id = req.params.id;
-        res.json({
-        message: `user id ${id} delete`
-        });
-})
 
 export default router;

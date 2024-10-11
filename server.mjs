@@ -24,8 +24,8 @@ let PORT = 3000
 
 //middleware
 
-app.use(bodyParser.urlencoded({ entended: true}));
-app.use(bodyParser.json({ extended: true}));
+// app.use(bodyParser.urlencoded({ entended: true}));
+// app.use(bodyParser.json({ extended: true}));
 
 app.use((req, res, next)=>{
     const time = new Date();
