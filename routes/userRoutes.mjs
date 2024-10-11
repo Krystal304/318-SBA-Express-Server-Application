@@ -2,7 +2,7 @@
 
 import express from 'express';
 
-let router = express.Router;
+let router = express.Router();
 
 
 router.get('/users/:id/', (req, res)=>{
