@@ -22,11 +22,19 @@ let PORT = 3000
 
 //middleware
 
+app.use(bodyParser.urlencode({ entended: true}));
+app.use(bodyParser.json({ extenden: true}));
 
-function logger(req, res, next){
-    console.log('log')
-    next()
-}
+app.use((req, res, next)=>{
+    const time = new Date();
+    console.log
+})
+
+
+// function logger(req, res, next){
+//     console.log('log')
+//     next()
+// }
 
 //routes CRUD
 
