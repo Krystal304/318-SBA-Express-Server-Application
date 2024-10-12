@@ -11,7 +11,7 @@ import dessertsRoutes from './routes/dessertsRoutes.mjs'
 const app = express ()
  
 
-//view engine
+//view engine 
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
@@ -24,27 +24,29 @@ app.use(logger)
 let PORT = 3000
 
 
-//middleware
+// middleware parsing 
 
-// app.use(bodyParser.urlencoded({ entended: true}));
-// app.use(bodyParser.json({ extended: true}));
+app.use(bodyParser.urlencoded({ entended: true}));
+app.use(bodyParser.json({ extended: true}));
 
+
+// custom middleware 
 app.use((req, res, next)=>{
     const time = new Date();
-    console.log(time)
-    next()
-})
+    console.log(`order received:`,time)
+    next();
+});
 
-
+//middlware
 function logger(req, res, next){
     console.log(req.url)
     next()
 }
-
+  // user and desserts routes 
 app.use('/users', userRoutes)
 app.use('/desserts', dessertsRoutes)
 
-//View Engine
+
 
 //routes CRUD
 

@@ -4,7 +4,7 @@ import express from 'express';
 
 let router = express.Router();
 
-
+// CRUD routes
 router.get('/', (req, res)=>{
     res.send('list')
 })

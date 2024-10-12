@@ -6,7 +6,22 @@
     <title>Desserts</title>
 </head>
 <body>
-    <h1> <%= name %></h1>
-    <h1> <%= cakeName %></h1>
+    <h1>dessert: <%= name %></h1>
+    <h1> donut:<%= donutName %></h1>
+    <h1> toppings: <%= toppings %></h1>
+
+    // form 
+    <form action = "/desserts/create" method="POST">
+        <label for='name'>Dessert Name:</label>
+        <input type="text" id="name" name="'name" required> 
+
+        <label for='donutName'>Donut Name:</label>
+        <input type="text" id="donutName" name="'donutName" required>
+
+        <label for='toppings'>Toppings:</label>
+        <input type="text" id="toppings" name="toppings" required>
+
+        <button type="submit">Create New Dessert</button>
+    </form>
 </body>
 </html>
