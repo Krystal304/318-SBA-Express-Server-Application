@@ -22,5 +22,12 @@ router.post('/create', (req,res)=>{
     res.send(`donut order: ${name} with ${donutName} and ${toppings}`);
 });
 
+res.render('desserts',{
+    name,
+    donutName,
+    toppings,
+    orderMessage: `your "${name}" with "${donutName}" and "${toppings} has been placed!`
+});
+
 
 export default router

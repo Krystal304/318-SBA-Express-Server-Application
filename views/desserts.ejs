@@ -10,18 +10,24 @@
     <h1> donut:<%= donutName %></h1>
     <h1> toppings: <%= toppings %></h1>
 
-                
+
     <form action = "/desserts/create" method="POST">
         <label for='name'>Dessert Name:</label>
-        <input type="text" id="name" name="'name" required> 
+        <input type="text" id="name" name="'name" placeholder ="desert" required> 
 
         <label for='donutName'>Donut Name:</label>
-        <input type="text" id="donutName" name="'donutName" required>
+        <input type="text" id="donutName" name="'donutName" placeholder="donutName"required>
 
         <label for='toppings'>Toppings:</label>
-        <input type="text" id="toppings" name="toppings" required>
+        <select id ="toppings" name = "toppings" required>
+            <option value="">--Select Topping--</option>
+            <option value="Glazed">Glazed</option>
+            <option value="Vanilla">Glazed</option>
+            <option value="Chocolate">Glazed</option>
+        </select>
+        <!-- <input type="text" id="toppings" name="toppings" required> -->
 
-        <button type="submit">Create New Dessert</button>
+        <button type="submit"> Dessert Order</button>
     </form>
 </body>
 </html>
