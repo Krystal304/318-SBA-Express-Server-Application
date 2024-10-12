@@ -19,7 +19,7 @@ router.get('/', (req, res)=>{
 //submission to order donut
 router.post('/create', (req,res)=>{
     const { name, donutName, toppings }  = req.body;
-    res.json(`donut order: ${name} with ${donutName} and ${toppings}`);
+    res.send(`donut order: ${name} with ${donutName} and ${toppings}`);
 });
 
 
