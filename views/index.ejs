@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href ="./styles.style.css">
     <title>Desserts</title>
 </head>
 <body>
    
-    <div class="form-container">
+      <div class="form-container">
+        <a href="https://www.motionelements.com/stock-image-36037703-colorful-donut-display-inside-cozy-bakery-in-bright-morning-light" alt="donuts">
+            <h2>Dessert: <%= name %></h2>
+            <p>Donut: <%= donutName %></p>
+            <p>Toppings: <%= toppings %></p>
+        </a>
 
-    <a href= "https://www.motionelements.com/stock-image-36037703-colorful-donut-display-inside-cozy-bakery-in-bright-morning-light" alt = "donuts">
-    <h2>dessert: <%= name %></h2>
-    <p> donut:<%= donutName %></p>
-    <p> toppings: <%= toppings %></p>
+        <form action="/desserts/create" method="POST">
+            <label for="name">Dessert Name:</label>
+            <input type="text" id="name" name="name" placeholder="Dessert" required><br><br>
 
+            <label for="donutName">Donut Name:</label>
+            <input type="text" id="donutName" name="donutName" placeholder="Donut Name" required><br><br>
 
-    <form action = "/desserts/create" method="POST">
-        <label for='name'>Dessert Name:</label>
-        <input type="text" id="name" name="'name" placeholder ="desert" required> 
+            <label for="toppings">Toppings:</label>
+            <select id="toppings" name="toppings" required>
+                <option value="">--Select Topping--</option>
+                <option value="Glazed">Glazed</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Chocolate">Chocolate</option>
+            </select><br><br>
+            <button type="submit"> Submit Order</button>
+        </form>
+    </div>
 
-        <label for='donutName'>Donut Name:</label>
-        <input type="text" id="donutName" name="'donutName" placeholder="donutName"required>
-
-        <label for='toppings'>Toppings:</label>
-        <select id="toppings" name= "toppings" required>
-            <option value="">--Select Topping--</option>
-            <option value="Glazed">Glazed</option>
-            <option value="Vanilla">Glazed</option>
-            <option value="Chocolate">Glazed</option>
-        </select>
-        <!-- <input type="text" id="toppings" name="toppings" required> -->
-
-        <button type="submit"> Dessert Order</button>
-    </form>
-</div>
 </body>
 </html>

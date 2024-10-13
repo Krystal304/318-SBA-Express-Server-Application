@@ -41,7 +41,7 @@ router.post('/', (req, res)=>{
         toppings: req.body.topping
         };
     desserts.push(dessertOrder);
-    res.render('show', dessertOrder);
+    res.render('desserts', dessertOrder);
     } else{
         res.send(`incorrect info`)
     }
@@ -71,13 +71,8 @@ router.delete('/:id', (req, res)=>{
     desserts.splice(dessertIndex, 1);
     res,json({ message: 'dessert deleted'})
 });
-//submission to order donut
-// router.post('/create', (req,res)=>{
-//     const { name, donutName, toppings }  = req.body;
-//     res.send(`donut order: ${name} with ${donutName} and ${toppings}`);
-// });
 
 
 
 
-export default router
+export default router;

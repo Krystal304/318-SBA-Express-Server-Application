@@ -7,8 +7,8 @@ import express from 'express'
 let router = express.Router()
 
 let orders =[
-    {id:1, name: 'delight', type: 'red velvet', toppings: 'glazed'},
-    {id:2, name: 'sparkle', type: 'chocolate', toppings: 'vanilla'}
+    {id:1, user: 'mickey', dessert: 'delight', toppings: 'glazed'},
+    {id:2, user: 'minnie', type: 'chocolate', toppings: 'vanilla'}
 ];
 
 //get route
@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
 })
 
 //update route
-router.put('/:id', (req, res)=>{
+router.put('/:id', (req, res) => {
     let order = orders.find (o => o.id === parseInt(req.params.id));
     if(!order){
         return res.status(404).json({ error: 'no order'});
@@ -58,7 +58,7 @@ router.delete('/:id',( req, res) => {
         return res.status(404).json({ error: "no order"});
     }
     orders.splice(orderIndex, 1);
-    res.json({ message: 'order deleted'})
+    res.json({ message: 'order deleted'});
 });
 
 export default router;

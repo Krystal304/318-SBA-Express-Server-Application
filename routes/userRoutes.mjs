@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create route
-router.post('/', (req, res)=>{
+router.post('/', (req, res) => {
     const createUser = {
         id: users.length + 1,
         name: req.body.name,
