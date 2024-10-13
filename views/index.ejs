@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href ="./styles.style.css">
+    <link rel = "stylesheet" href ="./styles/style.css">
     <title>Desserts</title>
 </head>
 <body>
    
       <div class="form-container">
         <a href="https://www.motionelements.com/stock-image-36037703-colorful-donut-display-inside-cozy-bakery-in-bright-morning-light" alt="donuts">
-            <h2>Dessert: <%= name %></h2>
-            <p>Donut: <%= donutName %></p>
-            <p>Toppings: <%= toppings %></p>
+            <h2>Dessert: <%= name || 'Select a dessert' %></h2>
+            <p>Donut: <%= donutName || 'none' %></p>
+            <p>Toppings: <%= toppings || 'none' %></p>
         </a>
 
         <form action="/desserts/create" method="POST">

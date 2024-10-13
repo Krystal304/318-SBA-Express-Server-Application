@@ -30,15 +30,21 @@ app.use(bodyParser.json({ extended: true}));
 //static files
 app.use(express.static('./styles'));
 
-  // user and desserts routes 
-  app.use('/users', userRoutes);
-  app.use('/desserts', dessertsRoutes);
-  app.use('/orders', orderRoutes);
 
 //route 
 app.get('/', (req, res) => {
     res.render('index')
 })
+
+  // user and desserts routes 
+  app.use('/users', userRoutes);
+  app.use('/desserts', dessertsRoutes);
+  app.use('/orders', orderRoutes);
+
+// //route 
+// app.get('/', (req, res) => {
+//     res.send('home')
+// })
 
 
 // error handle middleware
@@ -49,28 +55,24 @@ app.use((err, req, res, next) => {
 
 
 /// middleware
-app.use((req, res, next)=>{
+app.use((req, res,)=>{
     res.status(404).send('invalid page');
 });
 
-  //middlware
-function logger(req, res, next){
-    console.log(req.url);
-    next();
-}
-// pass middleware
-app.use(logger);
+//   //middlware
+// function logger(req, res, next){
+//     console.log(req.url);
+//     next();
+// }
+// // pass middleware
+// app.use(logger);
 
- // custom middleware 
-app.use((req, res, next)=>{
-    const time = new Date();
-    console.log(`order received:`,time);
-    next();
-});
-
-
-
-
+//  // custom middleware 
+// app.use((req, res, next)=>{
+//     const time = new Date();
+//     console.log(`order received:`,time);
+//     next();
+// });
 
 
 
