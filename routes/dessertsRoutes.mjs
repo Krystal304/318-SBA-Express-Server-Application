@@ -33,15 +33,19 @@ router.get('/:id', (req, res)=>{
 // create route
 
 router.post('/', (req, res)=>{
-    const dessertOrder ={
+    if( req.body.name && req.body.type && req.body.toppings){
+        const dessertOrder ={
         id: desserts.length + 1,
         name: req.body.name,
         type: req.body.type,
-        toppings: req.body.toppings
-
-    };
+        toppings: req.body.topping
+        };
     desserts.push(dessertOrder);
-    res.status(201).json(dessertOrder);
+    res.render('show', dessertOrder);
+    } else{
+        res.send(`incorrect info`)
+    }
+
 });
 
 //update route

@@ -31,7 +31,7 @@ router.get('/:id', (req, res)=>{
 router.post('/', (req, res) => {
     let newOrder = {
         id: orders.length + 1,
-        user: req.bodu.user,
+        user: req.body.user,
         dessert: req.body.dessert
     };
     orders.push(newOrder);
@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
 })
 
 //update route
-router/pus('/:id', (req, res)=>{
+router.put('/:id', (req, res)=>{
     let order = orders.find (o => o.id === parseInt(req.params.id));
     if(!order){
         return res.status(404).json({ error: 'no order'});

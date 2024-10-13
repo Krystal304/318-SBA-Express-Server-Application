@@ -14,14 +14,21 @@ const app = express ()
 //port
 
 let PORT = 3000
-//view engine 
-app.set('view engine', 'ejs')
-app.set('views', 'views')  
+
+//static files
+app.use(express.static('/.styles'));
+
+
 
 // middleware parsing 
 
 app.use(bodyParser.urlencoded({ entended: true}));
 app.use(bodyParser.json({ extended: true}));
+
+
+//view engine
+app.set('views', './desserts')  
+app.set('view engine', 'ejs')
 
 
   //middlware

@@ -1,17 +1,38 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Account</title>
+    <title>Desserts</title>
 </head>
 <body>
-    <h1> Create A New User</h1>
+   
+    <div class="form-container">
 
-<form action = '/desserts'><br>
-<input type= 'text' name= 'name' placeholder="name"/><br>
-<input type= 'text' name= 'sport' placeholder="sport"/><br>
-<input type= 'number' name= 'age' placeholder="age"/><br>
-<input type = 'submit'/>
-</form>
-</html> -->
+    <a href= "https://www.motionelements.com/stock-image-36037703-colorful-donut-display-inside-cozy-bakery-in-bright-morning-light" alt = "donuts">
+    <h2>dessert: <%= name %></h2>
+    <p> donut:<%= donutName %></p>
+    <p> toppings: <%= toppings %></p>
+
+
+    <form action = "/desserts/create" method="POST">
+        <label for='name'>Dessert Name:</label>
+        <input type="text" id="name" name="'name" placeholder ="desert" required> 
+
+        <label for='donutName'>Donut Name:</label>
+        <input type="text" id="donutName" name="'donutName" placeholder="donutName"required>
+
+        <label for='toppings'>Toppings:</label>
+        <select id="toppings" name= "toppings" required>
+            <option value="">--Select Topping--</option>
+            <option value="Glazed">Glazed</option>
+            <option value="Vanilla">Glazed</option>
+            <option value="Chocolate">Glazed</option>
+        </select>
+        <!-- <input type="text" id="toppings" name="toppings" required> -->
+
+        <button type="submit"> Dessert Order</button>
+    </form>
+</div>
+</body>
+</html>
