@@ -8,13 +8,21 @@
 </head>
 <body>
    
-      <div class="form-container">
-        <a href="https://www.motionelements.com/stock-image-36037703-colorful-donut-display-inside-cozy-bakery-in-bright-morning-light" alt="donuts">
-            <h2>Dessert: <%= name || 'Select a dessert' %></h2>
-            <p>Donut: <%= donutName || 'none' %></p>
-            <p>Toppings: <%= toppings || 'none' %></p>
-        </a>
+    <div class="image-container">
+        <img src="https://images.pexels.com/photos/4686958/pexels-photo-4686958.jpeg?auto=compress&cs=tinysrgb&w=600" width= '600' height= '300' alt="Donut">
+    
+        <div>
+            <h2>Dessert: <%= name || 'Customize Your Own Dessert' %></h2>
+            <ul>
+                <li>Donut: <%= donutName || 'none' %></li>
+                <li>Toppings: <%= toppings || 'none' %></li>
+            </ul>
+        </div>
+    </div>
+    
 
+
+     
         <form action="/desserts/create" method="POST">
             <label for="name">Dessert Name:</label>
             <input type="text" id="name" name="name" placeholder="Dessert" required><br><br>
