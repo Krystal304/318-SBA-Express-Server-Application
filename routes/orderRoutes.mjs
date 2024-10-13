@@ -11,7 +11,7 @@ let orders =[
     {id:2, name: 'sparkle', type: 'chocolate', toppings: 'vanilla'}
 ];
 
-//route for orders
+//get route
 
 router.get('/', (req, res)=>{
     res.json(orders);
@@ -19,16 +19,16 @@ router.get('/', (req, res)=>{
 
 
 router.get('/:id', (req, res)=>{
-    let order = orders.find(o=> o.id === parseInt(req.params.id)); 
+    let order = orders.find(o => o.id === parseInt(req.params.id)); 
     if (!order){
         return res.status(404).json({ error: 'no order'});
     }
     res.json(order);
-})
+});
 
 //post router
 
-router.post('/', (req, res)=>{
+router.post('/', (req, res) => {
     let newOrder = {
         id: orders.length + 1,
         user: req.bodu.user,
@@ -52,9 +52,9 @@ router/pus('/:id', (req, res)=>{
 
 //delete router
 
-router.delete('/:id',( req, res)=>{
-    let orderIndex = orders.findIndex(o=> o.id ===parseInt(req.params.id));
-    if(orderIndex === -1){
+router.delete('/:id',( req, res) => {
+    let orderIndex = orders.findIndex(o => o.id === parseInt(req.params.id));
+    if(orderIndex === -1) {
         return res.status(404).json({ error: "no order"});
     }
     orders.splice(orderIndex, 1);

@@ -11,7 +11,9 @@ import orderRoutes from './routes/orderRoutes.mjs';
 
 const app = express ()
  
+//port
 
+let PORT = 3000
 //view engine 
 app.set('view engine', 'ejs')
 app.set('views', 'views')  
@@ -30,21 +32,12 @@ function logger(req, res, next){
 // pass middleware
 app.use(logger)
 
-
-//port
-
-let PORT = 3000
-
-
-
-
-// custom middleware 
+ // custom middleware 
 app.use((req, res, next)=>{
     const time = new Date();
     console.log(`order received:`,time)
     next();
 });
-
 
   // user and desserts routes 
 app.use('/users', userRoutes)
@@ -55,6 +48,10 @@ app.use('/orders', orderRoutes);
 app.use((err, req, res, next)=>{
     console.errot(err);
     res.status(500).send('system error');
+});
+
+app.use((req, res, next)=>{
+    res.status(404).send('invalid page');
 });
 //listen 
 //

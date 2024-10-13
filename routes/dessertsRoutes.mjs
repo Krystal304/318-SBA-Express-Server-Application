@@ -7,14 +7,14 @@ let router = express.Router();
 let desserts =[
     {id:1, name: 'delight', type: 'red velvet', toppings: 'glazed'},
     {id:2, name: 'sparkle', type: 'chocolate', toppings: 'vanilla'}
-]
+];
 
 
-//render with EJS
+
 router.get('/', (req, res)=>{
     const { name } = req.query;
     if (name) {
-        const filterDesserts = desserts.filter(dessert => dessert.name.toLowerCase().includes(name.toLowerCase()));
+        const filteredDesserts = desserts.filter(dessert => dessert.name.toLowerCase().includes(name.toLowerCase()));
         return res.jsob(filteredDesserts);
     }
     res.json(desserts);
@@ -28,9 +28,9 @@ router.get('/:id', (req, res)=>{
         return res.status(404).json({ error: ' no dessert'});
     }
     res.json(dessert);
-})
+});
        
-// order new dessert post route
+// create route
 
 router.post('/', (req, res)=>{
     const dessertOrder ={
@@ -54,7 +54,7 @@ router.put('/:id', (req, res)=>{
     dessert.type = req.body.type || dessert.type;
     dessert.toppings = req.body.toppings || dessert.toppings;
     res.json(dessert);
-})
+});
 
 
 // delete route 
