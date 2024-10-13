@@ -6,9 +6,24 @@
     <title>Desserts</title>
 </head>
 <body>
-    <h1>dessert: <%= name %></h1>
-    <h1> donut:<%= donutName %></h1>
-    <h1> toppings: <%= toppings %></h1>
+    <style>
+        body {
+            background-color:mediumslateblue
+        }
+
+        button:hover {
+            background-color: hotpink;
+        }
+        button{
+            background-color: gray;
+        }
+    </style>
+    <div class="form-container">
+
+    <a href= "https://www.motionelements.com/stock-image-36037703-colorful-donut-display-inside-cozy-bakery-in-bright-morning-light" alt = "donuts">
+    <h2>dessert: <%= name %></h2>
+    <p> donut:<%= donutName %></p>
+    <p> toppings: <%= toppings %></p>
 
 
     <form action = "/desserts/create" method="POST">
@@ -19,7 +34,7 @@
         <input type="text" id="donutName" name="'donutName" placeholder="donutName"required>
 
         <label for='toppings'>Toppings:</label>
-        <select id ="toppings" name = "toppings" required>
+        <select id="toppings" name= "toppings" required>
             <option value="">--Select Topping--</option>
             <option value="Glazed">Glazed</option>
             <option value="Vanilla">Glazed</option>
@@ -29,5 +44,6 @@
 
         <button type="submit"> Dessert Order</button>
     </form>
+</div>
 </body>
 </html>
