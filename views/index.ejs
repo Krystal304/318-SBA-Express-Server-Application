@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href ="./styles/style.css">
+    <!-- <link rel = "stylesheet" href ="./styles/style.css"> -->
     <title>Desserts</title>
     <style>
         body{
@@ -21,7 +21,7 @@
         <div>
             <h2>Dessert: <%= name || 'Customize Your Own Donut' %></h2>
             <ul>
-            
+                <li>Dessert: <%= dessertName || 'none' %></li>
                 <li>Donut: <%= donutName || 'none' %></li>
                 <li>Toppings: <%= toppings || 'none' %></li>
             </ul>
@@ -32,12 +32,12 @@
 
      
         <form action="/desserts/create" method="POST">
-            <label for="name">Dessert Name:</label>
+            <label for="dessertname">Dessert Name:</label>
             <select id="dessertName" name="dessertName" required>
                 <option value="">--Select Dessert Name--</option>
                 <option value="Original">Original</option>
                 <option value="Delight">Delight</option>
-                <option value="Monster">Monster</option>
+                <option value="Deluxe">Deluxe</option>
             </select>
 
             <!-- <input type="text" id="name" name="name" placeholder="Dessert" required><br><br> -->
@@ -59,8 +59,11 @@
                 <option value="Vanilla">Vanilla</option>
                 <option value="Chocolate">Chocolate</option>
             </select><br><br>
+
             <button type="submit"> Submit Order</button>
         </form>
+        
+
     </div>
 
 </body>

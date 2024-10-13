@@ -32,14 +32,32 @@ app.use(express.static('./styles'));
 
 
 //route 
-app.get('/', (req, res) => {
-    res.render('index', { name: null, donutName: null, toppings: null});
+
+app.get('/', (req, res)=>{
+    res.render('index',{
+        name: null,
+        dessertName: null,
+        donutName: null,
+        toppings: null
+    });
 });
 
-app.post('/desserts/create', (req, res)=>{
-    let { name, donutName, toppings } = req.body;
+app.post ('/desserts/create', (req, res)=>{
+    let { dessertName, donutName , toppings} = req.body;
+    
+    if(!dessertName || !donutName || !toppings) {
+        console.log('error');
+        return res.status(404).send ('error');
+    }
 
-    res.render('index', { name, donutName, toppings });
+
+
+    res.render('index',{
+        name: dessertName,
+        dessertName: dessertName,
+        donutName: donutName,
+        toppings: toppings
+    });
 });
 
   // user and desserts routes 
@@ -47,10 +65,7 @@ app.post('/desserts/create', (req, res)=>{
   app.use('/desserts', dessertsRoutes);
   app.use('/orders', orderRoutes);
 
-// //route 
-// app.get('/', (req, res) => {
-//     res.send('home')
-// })
+
 
 
 // error handle middleware
@@ -65,20 +80,6 @@ app.use((req, res,)=>{
     res.status(404).send('invalid page');
 });
 
-//   //middlware
-// function logger(req, res, next){
-//     console.log(req.url);
-//     next();
-// }
-// // pass middleware
-// app.use(logger);
-
-//  // custom middleware 
-// app.use((req, res, next)=>{
-//     const time = new Date();
-//     console.log(`order received:`,time);
-//     next();
-// });
 
 
 
