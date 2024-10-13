@@ -33,8 +33,14 @@ app.use(express.static('./styles'));
 
 //route 
 app.get('/', (req, res) => {
-    res.render('index')
-})
+    res.render('index', { name: null, donutName: null, toppings: null});
+});
+
+app.post('/desserts/create', (req, res)=>{
+    let { name, donutName, toppings } = req.body;
+
+    res.render('index', { name, donutName, toppings });
+});
 
   // user and desserts routes 
   app.use('/users', userRoutes);
