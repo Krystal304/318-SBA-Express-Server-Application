@@ -4,7 +4,7 @@ This project is an e-commerce website built using Node.js and Express. This appl
 ## Features
 - Created a server using Node and Express
 - Create RESTful API using Express
-- C RUD methods
+- CRUD methods
 - Create custome and error handling middleware
 - Used ejs templete engine
 - Interactive with API and forms
